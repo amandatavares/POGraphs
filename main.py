@@ -1,20 +1,34 @@
+# -*- coding: utf-8 -*-
+
 from grafo import *
 from busca_largura import *
 
 def main():
     grafo = Grafo()
-    #Exemplo componente fortemente conexo
-    grafo.novo_Vertice(0)
-    grafo.novo_Vertice(1)
-    grafo.novo_Vertice(2)
-    grafo.novo_Vertice(3)
-    grafo.nova_Aresta(0,1,0)
-    grafo.nova_Aresta(0,3,0)
-    grafo.nova_Aresta(1,2,0)
-    grafo.nova_Aresta(2,0,0)
-    grafo.nova_Aresta(2,3,0)
-    largura, pai, aresta, nivel = busca_em_largura(grafo, 3)
-    print("Localizado na largura %s, pai %s, aresta %s, nivel %") % (largura, pai, aresta, nivel)
-#    grafo.imprime_Grafo(0,1)
+    print("Grafo demais App")
+    print("1 - Criar vértice")
+    print("2 - Criar aresta")
+    print("3 - Imprimir grafo")
+    print("4 - Sair")
+
+    while(True):
+        opt = input(str("Opção: "))
+        if opt == 1:
+            #Exemplo componente fortemente conexo
+            nome_Vertice = input(str("Identificador do Vertice: "))
+            grafo.novo_Vertice(nome_Vertice)
+        elif opt == 2:
+            origem = input(str("Origem: "))
+            destino = input(str("Destino: "))
+            peso = input(str("Peso: "))
+            grafo.nova_Aresta(origem, destino, peso)
+        elif opt == 3:
+            origem = input(str("Origem: "))
+            destino = input(str("Destino: "))
+            grafo.imprime_Grafo(origem,destino)
+        elif opt == 4:
+            break
+        else:
+            print("Selecione uma opção válida")
 
 main()
