@@ -8,7 +8,7 @@ def main():
     print("Grafo demais App")
     print("1 - Criar vértice")
     print("2 - Criar aresta")
-    print("3 - Imprimir grafo")
+    print("3 - Buscar aresta")
     print("4 - Sair")
 
     while(True):
@@ -23,9 +23,9 @@ def main():
             peso = input(str("Peso: "))
             grafo.nova_Aresta(origem, destino, peso)
         elif opt == 3:
-            origem = input(str("Origem: "))
-            destino = input(str("Destino: "))
-            grafo.imprime_Grafo(origem,destino)
+            vert1 = input(str("Vértice 1: "))
+            vert2 = input(str("Vértice 2: "))
+            grafo.busca_Aresta(vert1,vert2)
         elif opt == 4:
             break
         else:

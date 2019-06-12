@@ -16,9 +16,9 @@ class Grafo:
 
     def busca_Aresta(self, u, v):  # Método recebe dois objetos do tipo Vértice
         for w in self.lista_Arestas:
-            origem = w.getOrigem()
-            destino = w.getDestino()
-            if origem.getId() == u.getId() and destino.getId() == v.getId():
+            origem = w.origem
+            destino = w.destino
+            if origem.id == u.id and destino.id == v.id:
                 return w
 
     def busca_Vertice(self, identificador):  # Método recebe um int
